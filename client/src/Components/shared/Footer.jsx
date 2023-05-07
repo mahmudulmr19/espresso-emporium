@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "./Container";
-import logo from "../assets/icons/logo.png";
+import logo from "../../assets/icons/logo.png";
 import { BsTelephoneFill } from "react-icons/bs";
 import { HiEnvelope } from "react-icons/hi2";
 import { IoLocationSharp } from "react-icons/io5";

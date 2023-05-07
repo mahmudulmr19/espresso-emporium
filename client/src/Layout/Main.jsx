@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Footer, Header } from "../Components";
+import { Footer, Header } from "../Components/shared";
 
 const Main = () => {
   return (
