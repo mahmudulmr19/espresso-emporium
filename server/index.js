@@ -7,6 +7,7 @@ const { MongoClient } = require("mongodb");
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 const URL = process.env.MONGODB_URL;
+const client = new MongoClient(URL);
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -18,8 +19,20 @@ app.get("/", (req, res) => {
   });
 });
 
+app.post("/api/v1/coffees", async (req, res) => {
+  const coffee = req.body;
+  const collection = client.db("Espresso").collection("coffees");
+  const result = await collection.insertOne(coffee);
+  res.status(201).send(result);
+});
+
+app.get("/api/v1/coffees", async (req, res) => {
+  const collection = client.db("Espresso").collection("coffees");
+  const result = await collection.find().toArray();
+  res.status(200).send(result);
+});
+
 // START THE SERVER
-const client = new MongoClient(URL);
 client
   .connect()
   .then(() => {
