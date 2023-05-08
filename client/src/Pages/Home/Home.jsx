@@ -1,11 +1,14 @@
 import React from "react";
-import { Banner, Feature } from "../../Components/Home";
+import { Banner, Feature, Popular } from "../../Components/Home";
+import { useTitle } from "../../hooks";
 
 const Home = () => {
+  useTitle("Home");
   return (
     <div>
       <Banner />
       <Feature />
+      <Popular />
     </div>
   );
 };

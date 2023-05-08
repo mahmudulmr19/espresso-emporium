@@ -4,12 +4,19 @@ import logo from "../../assets/icons/logo.png";
 import { BsTelephoneFill } from "react-icons/bs";
 import { HiEnvelope } from "react-icons/hi2";
 import { IoLocationSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-gray-50">
       <Container className="py-4 grid md:grid-cols-2 lg:grid-cols-3 lg:justify-items-center gap-5 lg:gap-0">
         <div className="flex flex-col gap-3">
-          <img src={logo} alt="logo" className="w-10 h-10" />
+          <img
+            onClick={() => navigate("/")}
+            src={logo}
+            alt="logo"
+            className="w-10 h-10 cursor-pointer"
+          />
           <h3 className="text-[#331A15] font-semibold text-lg">
             Espresso Emporium
           </h3>
